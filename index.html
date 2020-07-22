@@ -88,17 +88,17 @@
             var abc;
             // When the image loads, set it as background image
             img.onload = function() {
-               abc= setInterval(function(){
                 var f_img = new fabric.Image(img);
             
                 canvas.setBackgroundImage(f_img);
             
                 canvas.renderAll();
-                console.log('mg')
-                if(document.getElementById('canvas').width > 0){
-                    clearInterval(abc)
-                    }
-            },500)
+                
+            document.getElementById('canvas').width = img.width;
+            document.getElementById('canvas').height = img.height;
+            document.querySelector('.upper-canvas').width = img.width;
+            document.querySelector('.upper-canvas').height = img.height;
+                console.log('mg')              
             };
             
             
@@ -107,10 +107,6 @@
             
             // Set the src of the image with the base64 string
             img.src = myDataURL;
-            document.getElementById('canvas').width = img.width;
-            document.getElementById('canvas').height = img.height;
-            document.querySelector('.upper-canvas').width = img.width;
-            document.querySelector('.upper-canvas').height = img.height;
 
             circle.addEventListener('click', function () { 
                 if( !arrowSel.classList.contains("active") && !freedrawing.classList.contains("active")){
