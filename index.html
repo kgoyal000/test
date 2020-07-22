@@ -92,12 +92,8 @@
                 canvas.setBackgroundImage(f_img);
             
                 canvas.renderAll();
-                
-            document.getElementById('canvas').width = img.width;
-            document.getElementById('canvas').height = img.height;
-            document.querySelector('.upper-canvas').width = img.width;
-            document.querySelector('.upper-canvas').height = img.height;
-            };
+
+            )};
             
             
             // Define the Data URI
@@ -105,7 +101,13 @@
             
             // Set the src of the image with the base64 string
             img.src = myDataURL;
-
+                
+            document.getElementById('canvas').width = img.width;
+            document.getElementById('canvas').height = img.height;
+            document.querySelector('.upper-canvas').width = img.width;
+            document.querySelector('.upper-canvas').height = img.height;
+            
+            
             circle.addEventListener('click', function () { 
                 if( !arrowSel.classList.contains("active") && !freedrawing.classList.contains("active")){
                 circle.classList.toggle("active");
