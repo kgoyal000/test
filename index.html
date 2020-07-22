@@ -368,6 +368,16 @@
             function clearCanvas(){
                 canvas.remove.apply(canvas, canvas.getObjects().concat())
             } 
+            
+            var img_check = setInterval(function(){
+                var f_img = new fabric.Image(img);
+                canvas.setBackgroundImage(f_img);
+                canvas.renderAll();
+                document.getElementById('canvas').width = img.width;
+                document.getElementById('canvas').height = img.height;
+                document.querySelector('.upper-canvas').width = img.width;
+                document.querySelector('.upper-canvas').height = img.height;
+            },10)
         </script>
     </body>
 </html>
