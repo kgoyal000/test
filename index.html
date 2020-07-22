@@ -75,6 +75,7 @@
             <canvas id='canvas' width=500 height=500 class="canvas"></canvas>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.6/fabric.min.js"></script>
         <script>
+            setTimeout(function(){
             var canvas = new fabric.Canvas('canvas');
             canvas.selection = false;
             var rect, ellipse, line, triangle, isDown, origX, origY, freeDrawing = true, textVal, activeObj;
@@ -107,7 +108,7 @@
             document.querySelector('.upper-canvas').width = img.width;
             document.querySelector('.upper-canvas').height = img.height;
             
-            
+            },200);
             circle.addEventListener('click', function () { 
                 if( !arrowSel.classList.contains("active") && !freedrawing.classList.contains("active")){
                 circle.classList.toggle("active");
@@ -369,16 +370,6 @@
                 canvas.remove.apply(canvas, canvas.getObjects().concat())
             } 
             
-            var img_check = setInterval(function(){
-                var f_img = new fabric.Image(img);
-                canvas.setBackgroundImage(f_img);
-                canvas.renderAll();
-                document.getElementById('canvas').width = img.width;
-                document.getElementById('canvas').height = img.height;
-                document.querySelector('.upper-canvas').width = img.width;
-                document.querySelector('.upper-canvas').height = img.height;
-                console.log('checking img');
-            },10)
         </script>
     </body>
 </html>
