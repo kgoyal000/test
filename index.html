@@ -85,10 +85,8 @@
             var freedrawing = document.getElementById('freedrawing');
             // Create a new instance of the Image class
             var img = new Image();
-            var img_load_check;
             // When the image loads, set it as background image
-            img.onload = function() {
-                img_load_check = setInterval(()=>{
+            img.addEventListener('load', function() {
                 var f_img = new fabric.Image(img);
             
                 canvas.setBackgroundImage(f_img);
@@ -99,11 +97,6 @@
             document.getElementById('canvas').height = img.height;
             document.querySelector('.upper-canvas').width = img.width;
             document.querySelector('.upper-canvas').height = img.height;
-                console.log('mg')   
-                    if(document.getElementById('canvas').width > 0){
-                        clearInterval(img_load_check);
-                    }
-                },100);
             };
             
             
