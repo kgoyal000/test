@@ -214,10 +214,13 @@
             }); */
     canvas.on({
         'touch:gesture': function(e) {
+            console.log('touch gesture')
             if (e.e.touches && e.e.touches.length == 2) {
+                console.log('touch gesture 1')
                 pausePanning = true;
                 var point = new fabric.Point(e.self.x, e.self.y);
                 if (e.self.state == "start") {
+                     console.log('touch gesture 1 if')
                     zoomStartScale = self.canvas.getZoom();
                 }
                 var delta = zoomStartScale * e.self.scale;
