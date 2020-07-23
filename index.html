@@ -215,6 +215,9 @@
  canvas.on({
         'touch:gesture': function(event) {
   // Handle zoom only if 2 fingers are touching the screen
+            if (e.cancelable) {
+   e.preventDefault();
+}
   if (event.e.touches && event.e.touches.length == 2) {
     // Get event point
     var point = new fabric.Point(event.self.x, event.self.y);
